@@ -1,17 +1,46 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var special = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var lowerCase = "abcdefghijklmnopqrstuvwxyz"
-var number = "1234567890"
+var special = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var number = "1234567890";
+
 
 // Write password to the #password input
 function generatePassword() { 
-  window.prompt("How many characters will your password be?")
-  window.prompt("Do you need special characters?")
-  window.prompt("Do you need upper case letters?")
-  window.prompt("Do you need lower case letters?")
-  window.prompt("Do you need numbers?")
+  var randomCharacters=""
+  var passwordLength=window.prompt("How many characters will your password be?");
+  if(passwordLength<8){
+    alert("Too short");
+    return;
+  }
+  
+  var needSpecialCharacters=window.confirm("Do you need special characters?");
+  var needUpperCase=window.confirm("Do you need upper case letters?");
+  var needLowerCase=window.confirm("Do you need lower case letters?");
+  var needNumbers= window.confirm("Do you need numbers?");
+
+  console.log(passwordLength, needSpecialCharacters, needUpperCase, needLowerCase, needNumbers)
+
+  var allCharacters = "" 
+  allCharacters+=lowerCase; 
+  allCharacters+=upperCase;
+  
+  allCharacters+=number;
+ if(needSpecialCharacters){
+    allCharacters+=special;
+  }
+
+  for(var i=0; i<passwordLength; i++){
+    var randomIndex=Math.floor(Math.random()*allCharacters.length);
+  randomCharacters=randomCharacters + allCharacters[randomIndex];
+  console.log(randomCharacters);
+  }
+
+  
+
+ 
+  return randomCharacters;
 }
 
 
