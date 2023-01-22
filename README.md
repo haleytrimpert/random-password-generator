@@ -7,10 +7,9 @@ This is a random password generator. The random password generator will ask how 
 
 ## Screenshots
 
-![Picture 1](assets/pictures/Screenshot1.png)
+![Picture 1](./Assets/Screenshot-1.png)
 
-![Picture 2](assets/pictures/Screenshot2.png)
+![Picture 2](./Assets/Screenshot-2.png)
 
-![Picture 3](assets/pictures/Screenshot3.png)
 
 ## Link
