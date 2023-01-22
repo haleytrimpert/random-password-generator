@@ -1,5 +1,5 @@
 # Module 3 Challenge
-Random Password GEnerator
+Random Password Generator
 
 ## Description
 
@@ -13,3 +13,4 @@ This is a random password generator. The random password generator will ask how 
 
 
 ## Link
+https://haleytrimpert.github.io/random-password-generator/
