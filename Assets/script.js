@@ -14,7 +14,10 @@ function generatePassword() {
     alert("Too short");
     return;
   }
-  
+  if(passwordLength>128){
+    alert("Too long");
+    return;
+  }
   var needSpecialCharacters=window.confirm("Do you need special characters?");
   var needUpperCase=window.confirm("Do you need upper case letters?");
   var needLowerCase=window.confirm("Do you need lower case letters?");
@@ -23,10 +26,17 @@ function generatePassword() {
   console.log(passwordLength, needSpecialCharacters, needUpperCase, needLowerCase, needNumbers)
 
   var allCharacters = "" 
-  allCharacters+=lowerCase; 
-  allCharacters+=upperCase;
+  if(needLowerCase){
+    allCharacters+=lowerCase; 
+  }
+  if(needUpperCase){
+    allCharacters+=upperCase;
+  }
   
-  allCharacters+=number;
+  if(needNumbers){
+    allCharacters+=number;
+  }
+  
  if(needSpecialCharacters){
     allCharacters+=special;
   }
@@ -36,8 +46,6 @@ function generatePassword() {
   randomCharacters=randomCharacters + allCharacters[randomIndex];
   console.log(randomCharacters);
   }
-
-  
 
  
   return randomCharacters;
